@@ -4,9 +4,11 @@ import java.sql.Time;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -15,7 +17,9 @@ import javax.persistence.Table;
 public class Show {
 
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(name="seq1", initialValue=4000, allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq1")
+	
 	
 	private int showId;
 	private Time showStartTime;

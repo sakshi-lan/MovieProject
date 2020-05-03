@@ -4,9 +4,11 @@ import java.sql.Time;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -14,7 +16,9 @@ import javax.persistence.Table;
 public class Theatre {
 	
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(name="seq2", initialValue=2000, allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq2")
+	
 	
 	private int theatreId;
 	private String theatreName;

@@ -18,7 +18,7 @@ public class DeleteTheatreController {
 	private DeleteTheatreServiceIn service;
 	
 	@DeleteMapping("/deleteTheatre/{id}")
-	public void deleteShow(@PathVariable ("id") int id) {
+	public void deleteTheatre(@PathVariable ("id") int id) {
 		service.deleteTheatre(id);
 	}
 

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cap.bean.Movie;
 import com.cap.service.AddMovieServiceIn;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @RestController
 @CrossOrigin("http://localhost:9090")
@@ -17,6 +18,7 @@ public class AddMovieController {
 	
 	@Autowired
 	private AddMovieServiceIn service;
+	
 	
 	@PostMapping("/add/movie")
 	public Movie addMovie(@RequestBody Movie mov) {

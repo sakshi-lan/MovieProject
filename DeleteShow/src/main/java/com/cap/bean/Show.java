@@ -2,6 +2,7 @@ package com.cap.bean;
 
 import java.sql.Time;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,7 +28,7 @@ public class Show {
 
 	private String showName;
 	
-	@ManyToOne(optional = false)
+	@ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="MOVIE_ID")
 	private Movie movie;
 	

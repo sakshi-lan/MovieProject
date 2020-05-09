@@ -26,13 +26,14 @@ public class Movie {
 	private String movieDirector;
 	private String movieLength;
 	private String languages;
-	@JsonFormat(pattern="dd-MM-yyyy")
-    private Date movieReleaseDate; 
+
+    private String movieReleaseDate; 
 	 
-	public Date getMovieReleaseDate() {
+
+	public String getMovieReleaseDate() {
 		return movieReleaseDate;
 	}
-	public void setMovieReleaseDate(Date movieReleaseDate) {
+	public void setMovieReleaseDate(String movieReleaseDate) {
 		this.movieReleaseDate = movieReleaseDate;
 	}
 	public int getMovieId() {
